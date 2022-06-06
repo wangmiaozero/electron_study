@@ -1,0 +1,72 @@
+{
+  "name": "electron_demo1",
+  "version": "1.0.0",
+  "description": "全栈 | 兔子零-汪苗的个人网站-全栈修炼",
+  "productName": "全栈修炼",
+  "main": "main.js",
+  "scripts": {
+    "test": "nodemon --watch main.js --exec electron .",
+    "dev": "nodemon --watch main.js --exec electron .",
+    "build": "electron-builder --win --x64",
+    "package-win": "electron-packager . 全栈修炼 --platform=win32 --electron-version=10.0.0 --arch=x64 --download.mirrorOptions.mirror=https://npm.taobao.org/mirrors/electron/ --asar --app-version=0.0.0 --build-version=0.0.0 --out=unpackage --overwrite --no-package-manager --ignore='(.git)' --icon=./assets/img/logo.ico",
+    "package-linux": "electron-packager . 全栈修炼 --platform=linux --electron-version=10.0.0 -no-sandbox --arch=x64 --download.mirrorOptions.mirror=https://npm.taobao.org/mirrors/electron/ --asar --app-version=0.0.0 --build-version=0.0.0 --out=unpackage --overwrite --no-package-manager --ignore='(.git)' --icon=./assets/img/logo.png",
+    "package-mac": "electron-packager . 全栈修炼 --platform=darwin --electron-version=10.0.0 --arch=x64 --download.mirrorOptions.mirror=https://npm.taobao.org/mirrors/electron/ --asar --app-version=0.0.0 --build-version=0.0.0 --out=unpackage --overwrite --no-package-manager --ignore='(.git)' --icon=./assets/img/logo.ico",
+    "build:window": "electron-packager . 全栈修炼 --platform=win32 --arch=x64 --out=./build --electron-version 9.0.2 --app-version 1.0.0 --overwrite --icon=./assets/img/logo.ico"
+  },
+  "build":{
+    "productName":"cloudDoc",
+    "appId": "全栈修炼.app",
+    "mac": {
+      "target": ["dmg", "zip"],  
+      "category": "public.app-category.productivity",
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "dmg":{
+      "background":"assets/img/appdmg.jpeg",
+      "icon": "assets/img/icon.icns",
+      "iconSize": 100,
+      "target": ["dmg","zip"],
+      "contents": [
+        { 
+          "x": 380,
+          "y": 280,
+          "type": "link",
+          "path": "/Applications"
+        },
+        { 
+          "x": 110,
+          "y": 280,
+          "type": "file"
+        }
+      ],
+      "window": {
+        "width": 500,
+        "height": 500
+      }
+    },
+    "win": {
+      "icon": "./assets/img/icon.ico",
+      "artifactName": "${productName}-Web-Setup-${version}.${ext}",
+      "publisherName": "Viking Zhang",
+      "target": ["nsis","zip"]
+    },
+    "nsis":{
+        "oneClick": false,
+        "guid": "490aa9ce-b83e-9c7d-36a3-73d98ee699c8",
+        "perMachine": true,
+        "allowElevation": true,
+        "allowToChangeInstallationDirectory": true,
+        "installerIcon": "./assets/img/icon.ico",
+        "uninstallerIcon": "./assets/img/icon.ico",
+        "installerHeaderIcon": "./assets/img/icon.ico",
+        "createDesktopShortcut": true,
+        "createStartMenuShortcut": true,
+        "shortcutName": "全栈修炼"
+    }
+  },
+  "author": "wangmiao",
+  "license": "ISC",
+  "devDependencies": {
+    "electron-packager": "^15.5.1"
+  }
+}

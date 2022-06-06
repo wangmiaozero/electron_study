@@ -1,0 +1,12 @@
+{
+  "name": "electron_demo",
+  "version": "1.0.0",
+  "description": "这是一个electron demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon --watch index.js --exec electron .",
+    "dev": "nodemon --watch index.js --exec electron ."
+  },
+  "author": "wangmiao",
+  "license": "ISC"
+}
