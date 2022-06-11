@@ -11,7 +11,7 @@ let remindWindow
 app.on('ready', async () => {
   mainWindow = new BrowserWindow({
     frame: false,
-    resizable: false,
+    resizable: true,
     width: 800,
     height: 600,
     icon: iconPath,
@@ -83,7 +83,7 @@ function createRemindWindow (task) {
   remindWindow = new BrowserWindow({
     height: 450,
     width: 360,
-    resizable: false,
+    resizable: true,
     frame: false,
     icon: iconPath,
     show: false,

@@ -30,12 +30,13 @@ module.exports = { //多页面打包
           "buildResources": "build"
         },
         "mac": {
-          "category": "public.app-category.utilities"
+          "target": ["dmg", "zip"],       //安装包的格式，默认是"dmg"和"zip"
+          "category": "public.app-category.utilities"  //应用程序安装到哪个分类下，具体有哪些分类可以在苹果官网上找
         },
         "dmg": {
-          "background": "build/background.jfif",
-          "icon": "build/icons/icon.icns",
-          "iconSize": 100,
+          "background": "build/background.jfif",//安装窗口背景图
+          "icon": "build/icons/icon.icns", //安装图标
+          "iconSize": 100,                         //图标的尺寸
           "contents": [
             {
               "x": 380,
@@ -49,7 +50,7 @@ module.exports = { //多页面打包
               "type": "file"
             }
           ],
-          "window": {
+          "window": {  //安装窗口的大小
             "width": 540,
             "height": 380
           }
