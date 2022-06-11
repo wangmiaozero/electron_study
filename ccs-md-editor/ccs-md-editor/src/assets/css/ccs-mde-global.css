@@ -1,0 +1,11 @@
+:root {
+  --ccs-mde-primary-font-color: #d1d2d5;
+  --ccs-mde-winTitle-height: 60px;
+  --ccs-mde-winTitle-color: #252526;
+  --ccs-mde-splitLine-width: 3px; /* 不要调太大, 正常是 3 就够了 */
+  --ccs-mde-fileList-color: #222222;
+  --ccs-mde-background-color: #1e1e1e;
+  --ccs-mde-img-background-color: #1e1e1eee;
+  --ccs-mde-toolbar-color: var(--ccs-mde-background-color);
+  --ccs-mde-unimportant-font-color: #999999;
+}
