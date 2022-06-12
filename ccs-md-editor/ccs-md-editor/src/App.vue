@@ -1,36 +1,52 @@
 <template>
   <div>
-    <div class = "WinTitle">
-      <div class = "Logo">
-        <img src = "./assets/icon/logo.svg" style = "height: 26px;"/>
-        <img src = "./assets/icon/icon.svg" style = "margin-left: 6px; height: 20px;"/>
+    <div class="WinTitle">
+      <div class="Logo">
+        <img src="./assets/icon/logo.svg" style="height: 26px" />
+        <img
+          src="./assets/icon/icon.svg"
+          style="margin-left: 6px; height: 20px"
+        />
       </div>
-      <div class = "WinTitleControl"></div>
-      <div class = "Control">
-        <div class = "Button" @click = "BtnMinimize"><img src = "./assets/icon/minimize.svg" style = "height: 12px;"/></div>
-        <div class = "Button" @click = "BtnMaximize"><img src = "./assets/icon/maximize.svg" style = "height: 12px;"/></div>
-        <div class = "Button" @click = "BtnWinClose"><img src = "./assets/icon/close.svg" style = "height: 12px;"/></div>
+      <div class="WinTitleControl"></div>
+      <div class="Control">
+        <div class="Button" @click="BtnMinimize">
+          <img src="./assets/icon/minimize.svg" style="height: 12px" />
+        </div>
+        <div class="Button" @click="BtnMaximize">
+          <img src="./assets/icon/maximize.svg" style="height: 12px" />
+        </div>
+        <div class="Button" @click="BtnWinClose">
+          <img src="./assets/icon/close.svg" style="height: 12px" />
+        </div>
       </div>
     </div>
-    <div class = "WinContent"><router-view></router-view></div>
+    <div class="WinContent"><router-view></router-view></div>
   </div>
 </template>
 
 <script>
-const ipcRenderer = window.electron.ipcRenderer
+const ipcRenderer = window.electron.ipcRenderer;
 export default {
   methods: {
-    BtnMinimize: function () { ipcRenderer.send('min') },
-    BtnMaximize: function () { ipcRenderer.send('max') },
-    BtnWinClose: function () { ipcRenderer.send('close') }
-  }
-}
+    BtnMinimize: function () {
+      ipcRenderer.send("min");
+    },
+    BtnMaximize: function () {
+      ipcRenderer.send("max");
+    },
+    BtnWinClose: function () {
+      ipcRenderer.send("close");
+    },
+  },
+};
 </script>
 
 <style>
-@import './assets/css/ccs-mde-global.css';
+@import "./assets/css/ccs-mde-global.css";
 #app {
-  font-family: 'Consolas', '微软雅黑', monospace, 'Microsoft YaHei', 'hw-iconfont';
+  font-family: "Consolas", "微软雅黑", monospace, "Microsoft YaHei",
+    "hw-iconfont";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--ccs-mde-primary-font-color);
@@ -81,14 +97,13 @@ export default {
   height: 32px;
   border-radius: 8px;
   background: var(--ccs-mde-winTitle-color);
-  box-shadow:  3px 3px 6px #1a1a1b,
-              -3px -3px 6px #303031;
+  box-shadow: 3px 3px 6px #1a1a1b, -3px -3px 6px #303031;
   margin-right: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   user-select: none;
-  transition: background .3s;
+  transition: background 0.3s;
 }
 
 .Button:hover {
@@ -98,8 +113,7 @@ export default {
 .Button:active {
   border-radius: 8px;
   background: #252526;
-  box-shadow: inset 3px 3px 6px #1a1a1b,
-              inset -3px -3px 6px #303031;
+  box-shadow: inset 3px 3px 6px #1a1a1b, inset -3px -3px 6px #303031;
 }
 
 .v3-menus {
